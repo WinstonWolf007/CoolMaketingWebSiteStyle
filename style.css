@@ -1,0 +1,173 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+#top {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 2px black dashed;
+    padding-bottom: 18px;
+}
+
+#home, #menu {
+    margin-top: 20px;
+    color: black;
+    transition: 0.3s;
+}
+
+#home:hover, #menu:hover {
+    cursor: pointer;
+    color: #ff4747
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+
+#title .tText {
+    margin-top: 23px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#title .tText #start {
+    --bg-size: 400%;
+    --color-one: hsl(15 90% 55%);
+    --color-two: hsl(40 95% 55%);
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(
+                  90deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move-bg 8s infinite linear;
+}
+
+#title .tText #end {
+    font-style: italic;
+}
+
+@keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+}
+
+#items {
+    margin-top: 20px;
+    height: 500px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+#items .item #row {
+    display: flex;
+    flex-direction: row;
+}
+#items .item {
+    user-select: none;
+    cursor: pointer;
+    
+    border: #04374d solid 1px;
+    border-radius: 20px;
+    width: 98%;
+    font-family: sans-serif;
+    transition: 0.3s;
+    height: 132px;
+    overflow-y: hidden;
+}
+
+#items .item #btn button {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5px;
+
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+    font-size: 10px;
+    padding: 5px;
+
+    font-family: sans-serif;
+    font-weight: bold;
+    
+    --bg-size: 400%;
+    --color-one: #ffffff;
+    --color-two: #FFC400;
+    background: linear-gradient(
+                  45deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    color: #000000;
+    animation: move-bg 10s infinite linear;
+}
+
+#items .item:not(:first-child) {
+    margin-top: 20px;
+}
+
+#items .item:hover {
+    border-color: #ff4747;
+}
+
+@keyframes resizeBoxF {
+    0% {
+        height: 132px;
+    }
+    100% {
+        height: 170px;
+    }
+}
+
+@keyframes resizeBoxB {
+    0% {
+        height: 170px;
+    }
+    100% {
+        height: 132px;
+    }
+}
+
+#items .item #row img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    margin-top: 20px;
+}
+
+#items .item #row #topItems p:nth-child(1) {
+    font-weight: bold;
+}   
+
+#items .item #row #topItems p:nth-child(1) font {
+    transition: 0.3s;
+}
+
+#items .item #row #topItems p:nth-child(1) font:hover {
+    color: #04374d;
+}
+
+#items .item #row #topItems p:nth-child(2) {
+    font-size: 15px;
+    padding-right: 3px;
+}   
